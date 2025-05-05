@@ -1,0 +1,10 @@
+package automaction;
+
+public class example {
+	public static void main(String[] args) {
+		System.out.println("Hey!");
+		System.out.println("My Name Is Khushi Godhani");
+		System.out.println("I Am From Ahmedabad");
+	}
+
+}
