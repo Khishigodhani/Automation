@@ -1,0 +1,28 @@
+/*
+ While/Do-while
+ 
+ -- while is an entry controlled loop and do-while is an do-while is an exit controlled loop.
+ -- there is no semicolon after while, but in do-while there is semicolon after while.
+ -- If condition false at first in while then there will be no execution, but in do-while id condition false at first still there is minimum one time execution.
+ 
+ 
+*/
+
+package automaction;
+
+import java.util.Scanner;
+
+public class WhileLoop {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n;
+		System.out.println("Enetr N : ");
+        n=sc.nextInt();
+        while(n>0)
+        {
+        	System.out.println("TOPS TECHNOLOGIES");
+        	n--;
+        }
+	}
+
+}
