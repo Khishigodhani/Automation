@@ -1,0 +1,31 @@
+/*
+ *  Array
+ *  - Array is group of data that share the common name.
+ *  - Array index is always starts from ZERO.
+ *  - Type:
+ *        1. One Dimensional
+ *        2. Two Dimensional
+ *        3. Multi 
+ * - int a[]=new int[5];
+ * a[0],a[1],a[2],a[3],a[4]
+ */
+
+
+package automaction;
+
+import java.util.Scanner;
+
+public class ArrayDemo {
+	public static void main(String[] args) {
+		int a[]=new int[5];
+		int i;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter Array Elements");
+		for(i=0;i<a.length;i++)
+		{
+		System.out.print("Enetr "+i+" Elemnet : ");
+		a[i]=sc.nextInt();
+		}
+	}
+
+}
