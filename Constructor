@@ -1,0 +1,49 @@
+/*
+ * 
+ * Constructor
+ * 
+ * -- It is a special member function whose task is to initialize the object of it's class.
+ * 
+ * Characteristics
+ * 
+ * 1. They have the same name as the class name.
+ * 2. They do not have any return name.
+ * 3. They are invoked automatically when the objects are created.
+ * 
+ * Types
+ * 
+ * 1. Default Constructor(The constructor which have no arguments)
+ * 2. Parameterized constructor (The Constructor which have some arguments)
+ * 3. Copy Constructor (The constructor which have object as argument)
+ *  
+ */
+
+
+package automaction;
+
+import java.util.Scanner;
+
+public class ConstructorDemo {
+	public static void main(String[] args) {
+		int a[][]=new int[3][3];
+		int i = 0,j;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter 2 D Array");
+		for(j=0;j<a.length;j++)
+		{
+			System.out.println("Eneter "+i+"Row & "+j+" Cloumn :");
+			a[i][j]=sc.nextInt();
+		
+		System.out.println("2 D Array Is");
+		for(i=0;j<a.length;j++)
+		{
+			for(j=0;j<a.length;j++) {
+				//System.out.println("A["+i+"]["+j+"]="+a[i][j]);
+				System.out.println(""+a[i][j]);
+			}
+			System.out.println();
+		}
+		}
+	}
+	
+}
