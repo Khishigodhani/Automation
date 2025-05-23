@@ -1,0 +1,55 @@
+package automaction;
+
+class Box1
+{
+	double width,height,depth;
+	Box1()
+	{
+		System.out.println("Default Constructor called");
+	    width=3;
+	    height=4;
+	    depth=5;
+	    
+	}
+	Box1(double w,double h,double d)
+	{
+		System.out.println("Parameterized Constructor Called");
+		width=w;
+		height=h;
+		depth=d;
+		
+	}
+	Box1(Box1 b)
+	{
+		System.out.println("Copy Constructor Called");
+		width=b.width;
+		height=b.height;
+		depth=b.depth;
+	}
+	void Voulme()
+	{
+		System.out.println("Volume : "+(width*height*depth));
+	}
+	
+}
+
+public class ConstructorDemoParameters {
+	
+	public static void main(String[] args) {
+		
+		Box1 b1=new Box1();
+		b1.Voulme();
+		
+		Box1 b2=new Box1(4,5,6);
+		b2.Voulme();
+		
+		Box1 b3=new Box1(b1);
+		b3.Voulme();
+	}
+
+}
+
+	
+		
+
+
