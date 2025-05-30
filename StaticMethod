@@ -1,0 +1,52 @@
+package automaction;
+
+public class StaticMethod {
+	
+ static int a=10;
+ static int b;
+ {
+	 System.out.println("Block 1");
+ }
+ static void math(int x)
+ {
+	 System.out.println("Math Method Called");
+	 System.out.println("X : "+x);
+	 System.out.println("A : "+a);
+	 System.out.println("B : "+b);
+ }
+ static 
+ {
+	 System.out.println("Static Block Intialized");
+	 b=a*4;
+ }
+ {
+	 System.out.println("Block 2");
+ }
+ public StaticMethod()
+ {
+	 System.out.println("Constructor Called");
+ }
+    public static void main(String[] args) {
+    	System.out.println("Main Method Called");
+    	StaticMethod s=new StaticMethod();
+		math(12);
+	}
+}
+
+
+/*public class StaticMethod{
+	 
+	
+	void display()
+	{
+		System.out.println("1");
+		
+	}
+	public static void main(String[] args)
+	{
+		
+		StaticMethod t=new StaticMethod();
+		t.display();
+	}
+
+}*/
