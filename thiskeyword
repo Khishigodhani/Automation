@@ -1,0 +1,31 @@
+package automaction;
+
+class student
+{
+    int rno;
+    String sname;
+    public student() {
+    	System.out.println("Student's Default Constructor ");
+    }
+    
+    
+    public student(int rno,String sname)
+    {
+    	this(); 
+    	this.rno=rno;
+    	this.sname=sname; 
+    }
+    void show()
+    {
+    	System.out.println("Roll No : "+rno);
+    	System.out.println("Student Name :"+sname);
+    }
+}
+public class thiskeyword {
+
+	
+	public static void main(String[] args) {
+		student s=new student(1,"khushi");
+		s.show();
+	}
+}
