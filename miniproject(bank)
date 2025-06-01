@@ -1,0 +1,114 @@
+-------------------------------------InsufficientFund-----------------------------------------------
+package miniproject;
+
+public class InsufficientFund extends Exception{
+	
+     double amount;
+    	 
+    	public InsufficientFund(double amount) {
+			this.amount=amount;
+		}
+    	public double getAmount() {
+    	return this.amount;
+    	}
+     }
+
+----------------------------CheckingAccount------------------------------------
+package miniproject;
+
+public class CheckingAccount {
+
+	private int acno;
+	private double balance;
+	private String cname;
+	public CheckingAccount(int acno, double balance, String cname) {
+		this.acno = acno;
+		this.balance = balance;
+		this.cname = cname;
+		System.out.println("Hello "+cname+",your Accounr Number "+acno+" Is Opened With "+balance+"Rs.");
+	} 
+	public void desposit(double amount)
+	{
+		this.balance=this.balance+amount;
+		
+	}
+	public void withdraw(double amount) throws InsufficientFund
+	{
+		if(amount<=this.balance) {
+		 this.balance=this.balance-amount;
+		}
+		else {
+		 throw new InsufficientFund(amount-this.balance);
+		}
+		}
+	public void checkbBalance() {
+		System.out.println("Current Balance : "+this.balance);
+	}
+	}
+
+---------------------------------Bank-----------------------------------------
+package miniproject;
+
+import java.util.Scanner;
+
+public class Bnak {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("***************");
+		CheckingAccount c=new CheckingAccount(101,5000,"khushi");
+		double amount;
+		
+		while(true) {
+			System.out.println("***************");
+			System.out.println("1. Deposit");
+			System.out.println("2. Withdeawal");
+			System.out.println("3. Check Balance");
+			System.out.println("4. Exit");
+			System.out.println("***************");
+			System.out.print("Enter Your Choice");
+			int choice=sc.nextInt();
+			System.out.println("***************");
+
+			if(choice==1)
+			{
+				System.out.print("Enter Deposit Amount : ");
+				amount=sc.nextDouble();
+				c.desposit(amount);
+				System.out.println("***************");
+
+			}
+			else if(choice==2)
+			{
+				System.out.println("Enter Withdrawal Amount :");
+				amount=sc.nextDouble();
+				try {
+					c.withdraw(amount);
+					
+				} catch (InsufficientFund e) {
+					System.out.println("Soorry You Need Another "+e.getAmount()+" Rs.");
+				}
+				System.out.println("***************");
+			}
+			else if(choice==3)
+			{
+				c.checkbBalance();
+				System.out.println("***************");
+			}
+			else if(choice==4)
+			{
+				System.out.println("Thank ou For Using Our Services. ");
+				System.out.println("***************");
+				break;
+			}
+			else
+			{
+				System.out.println("Invaild Choice. Please Try Again.");
+				System.out.println("***************");
+			}
+
+		}
+	}
+
+}
+
+
