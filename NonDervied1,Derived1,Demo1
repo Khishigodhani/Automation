@@ -1,0 +1,45 @@
+---------------------- NonDervied1----------------------
+
+package com.p2;
+
+import com.p1.protection;
+
+public class NonDervied1  {
+
+	public NonDervied1() {
+		protection p=new protection();
+		System.out.println("NonDerived1's Constructor");
+		//System.out.println("n : "+p.n);
+		System.out.println("n_pub : "+p.n_pub);
+		//System.out.println("n_pro : "+p.n_pro);
+		//System.out.println("n_pri : "+p.n_pri);
+	}
+} 
+
+-------------------------------Derived1 --------------------------
+
+package com.p2;
+
+import com.p1.protection;
+
+public class Derived1 extends protection{
+
+	public Derived1() {
+	System.out.println("Derived1's Constructor");
+	//System.out.println("n : "+p.n);
+	System.out.println("n_pub : "+n_pub);
+	System.out.println("n_pro : "+n_pro);
+	//System.out.println("n_pri : "+n_pri);
+}
+}
+
+----------------------Demo1----------------------
+package com.p2;
+
+public class Demo1 {
+
+	public static void main(String[] args) {
+		Derived1 d=new Derived1();
+		NonDervied1 n=new NonDervied1();
+	}
+}
