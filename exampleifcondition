@@ -1,0 +1,25 @@
+package automaction;
+
+import java.util.Scanner;
+
+public class exampleifcondition {
+	
+	public static void main(String[] args) {
+		int a;
+		Scanner sc=new Scanner(System.in);
+	    System.out.println("Enetr A :");
+	    a=sc.nextInt();
+	    if(a>0)
+	    {
+	    	
+	    	System.out.println("A is positive number");
+	    }
+	    		
+	    else 
+	    {
+	    	System.out.println("A is negative number");
+	    	
+	    }
+	}
+
+}
