@@ -1,0 +1,28 @@
+package webdriver;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class BasicXpath {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver","E:\\chrome driver\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://demo.guru99.com/test/selenium-xpath.html");
+		Thread.sleep(2000);
+		driver.manage().window().maximize();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//input[@name='uid']")).sendKeys("khushi");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("patel3110");
+		Thread.sleep(2000);
+
+		driver.findElement(By.xpath("//*[contains(@type,'sub')]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("[contains(@name,'btn')]")).click();
+		Thread.sleep(2000);
+		driver.close();
+	
+	}
+}
