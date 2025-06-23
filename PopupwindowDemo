@@ -1,0 +1,45 @@
+package webdriver;
+
+import java.util.Iterator;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class PopupwindowDemo {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver","E:\\chrome driver\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://demo.guru99.com/popup.php");
+		Thread.sleep(2000);
+		driver.manage().window().maximize();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("/html/body/p[1]/a")).click();
+		String MainWindow=driver.getWindowHandle();
+		Set<String> s1=driver.getWindowHandles();		
+        Iterator<String> i1=s1.iterator();
+        
+        Thread.sleep(2000);
+        while(i1.hasNext())			
+        {
+        	String ChildWindow=i1.next();
+        	Thread.sleep(2000);
+        	if(!MainWindow.equalsIgnoreCase(ChildWindow))			
+            {
+        		driver.switchTo().window(ChildWindow);	                                                                                                           
+                driver.findElement(By.name("emailid")).sendKeys("khushi.31@gmail.com");      
+                driver.findElement(By.name("btnLogin")).click();
+                Thread.sleep(2000);
+                
+                driver.close();	
+            }
+        }
+        Thread.sleep(2000);
+        driver.switchTo().window(MainWindow);
+		Thread.sleep(2000);
+		driver.close();
+	
+	}
+}
